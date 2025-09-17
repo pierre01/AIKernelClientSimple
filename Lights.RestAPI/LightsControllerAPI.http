@@ -1,0 +1,319 @@
+#@LightsAPIHost = rh8xzzh8-5042.usw3.devtunnels.ms
+@LightsAPIHost = https://localhost:5042
+
+# OpenAPI Description
+GET {{LightsAPIHost}}/openapi/v1/openapi.json
+###
+# Get All the lights
+GET {{LightsAPIHost}}/lights
+###
+# Get All the rooms
+GET {{LightsAPIHost}}/rooms
+###
+
+
+# Living Room Lights ------------------------------------------------
+# Switch on the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 0,
+    "State": "On"
+  },
+  {
+    "LightId": 1,
+    "State": "On"
+  },
+  {
+    "LightId": 2,
+    "State": "On"
+  }]
+}
+###
+
+# Adjust the color of the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+    [{
+      "LightId": 0,
+       "Color": "FF0000"
+    },
+    {
+      "LightId": 1,
+       "Color": "FF0000"
+    }]
+}
+###
+
+# reset the color of the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": [{
+  "LightId": 0,
+   "Color": "FFffff"
+},
+{
+  "LightId": 1,
+   "Color": "ffffff"
+}]}
+###
+# Adjust the brightness of the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": [
+    {
+      "LightId": 0,
+      "Brightness": "50"
+    },
+    {
+      "LightId": 1,
+      "Brightness": "50"
+    },
+    {
+      "LightId": 2,
+      "Brightness": "50"
+    }
+  ]}
+###
+# Adjust back the brightness of the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": [
+    {
+      "LightId": 0,
+      "Brightness": "100"
+    },
+    {
+      "LightId": 1,
+      "Brightness": "100"
+    },
+    {
+      "LightId": 2,
+      "Brightness": "100"
+    }
+  ]}
+###
+
+# Switch off the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 0,
+    "State": "Off"
+  },
+  {
+    "LightId": 1,
+    "State": "Off"
+  },
+  {
+    "LightId": 2,
+    "State": "Off"
+  }]
+}
+###
+
+# Office Lights -----------------------------------------------------
+# Switch on the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 8,
+    "State": "On"
+  },
+  {
+    "LightId": 9,
+    "State": "On"
+  }]
+}
+###
+#Dim the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 8,
+    "Brightness": 50
+  },
+  {
+    "LightId": 9,
+    "Brightness": 50
+  }]
+}
+###
+
+###
+# Switch off the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 8,
+    "State": "Off"
+  },
+  {
+    "LightId": 9,
+    "State": "Off"
+  }]
+}
+###
+# Kitchen Lights -----------------------------------------------------
+# Switch on the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 3,
+    "State": "On"
+  },
+  {
+    "LightId": 4,
+    "State": "On"
+  },
+  {
+    "LightId": 5,
+    "State": "On"
+  }]
+}
+###
+# Switch off the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 3,
+    "State": "Off"
+  },
+  {
+    "LightId": 4,
+    "State": "Off"
+  },
+  {
+    "LightId": 5,
+    "State": "Off"
+  }]
+}
+###
+# Downstairs Bathroom -----------------------------------------------------
+# Switch on the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 6,
+    "State": "On"
+  }]
+}
+###
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 6,
+    "State": "Off"
+  }]
+}
+###
+# Laundry room -----------------------------------------------------
+# Switch on the lights
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 7,
+    "State": "On"
+  }]
+}
+###
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 7,
+    "State": "Off"
+  }]
+}
+###
+# Stairs -----------------------------------------------------
+# Switch on the light
+PATCH {{LightsControllerAPI_HostAddress}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 10,
+    "State": "On"
+  }]
+}
+###
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 10,
+    "State": "Off"
+  }]
+}
+###
+# Master Bedroom -----------------------------------------------------
+# Switch on the light
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 11,
+    "State": "On"
+  },
+  {
+    "LightId": 12,
+
+    "State": "On"
+  },
+  {
+    "LightId": 13,
+    "Color": "FF0000"
+    "State": "On"
+  }]
+}
+###
+
+PATCH {{LightsAPIHost}}/lights
+Content-Type: application/json
+{
+  "lightUpdates": 
+  [{
+    "LightId": 11,
+    "State": "Off"
+  },
+  {
+    "LightId": 12,
+
+    "State": "Off"
+  },
+  {
+    "LightId": 13,
+    "Color": "ffffff"
+    "State": "Off"
+  }]
+}
+###

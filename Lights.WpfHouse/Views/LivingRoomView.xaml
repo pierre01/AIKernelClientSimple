@@ -1,0 +1,207 @@
+﻿<UserControl
+	x:Class="WpfHousePassiveClient.Views.LivingRoomView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:WpfHousePassiveClient.Views"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:vm="clr-namespace:WpfHousePassiveClient.ViewModels"
+	Width="800"
+	Height="450"
+	MinWidth="800"
+	MinHeight="450"
+	MaxWidth="800"
+	MaxHeight="450"
+	d:DataContext="{d:DesignInstance vm:LivingRoomViewModel,
+	                                 IsDesignTimeCreatable=True}"
+	d:DesignHeight="450"
+	d:DesignWidth="800"
+	mc:Ignorable="d">
+	<Grid ClipToBounds="True">
+		<Rectangle x:Name="RoomDark" Fill="{StaticResource RoomDarkBrush}" />
+		<TextBlock
+			Margin="0,156,0,0"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Top"
+			FontSize="48"
+			Foreground="White"
+			Text="Living Room"
+			TextWrapping="Wrap" />
+		<Rectangle
+			x:Name="RoomLight"
+			d:IsHidden="True"
+			Fill="{StaticResource RoomLightBrush}"
+			Visibility="{Binding IsRoomLighten}" />
+		<Rectangle
+			x:Name="BarFurniture"
+			Width="54"
+			Height="182"
+			Margin="0,93,-10,0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Style="{StaticResource Furniture}" />
+		<Ellipse
+			x:Name="FrontLightGlow"
+			Width="529"
+			Height="538"
+			Margin="-47,0,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Center"
+			d:IsLocked="True">
+			<Ellipse.Fill>
+				<RadialGradientBrush>
+					<GradientStop Offset="0.4" Color="{Binding FrontLights.OriginPointColor}" />
+					<GradientStop Offset="1" Color="{Binding FrontLights.EndPointColor}" />
+				</RadialGradientBrush>
+			</Ellipse.Fill>
+		</Ellipse>
+		<Ellipse
+			x:Name="WallLightGlow"
+			Width="365"
+			Height="220"
+			Margin="208,342,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top">
+			<Ellipse.Fill>
+				<RadialGradientBrush>
+					<GradientStop Offset="0.4" Color="{Binding WallLight.OriginPointColor}" />
+					<GradientStop Offset="1" Color="{Binding WallLight.EndPointColor}" />
+				</RadialGradientBrush>
+			</Ellipse.Fill>
+		</Ellipse>
+		<Ellipse
+			x:Name="BackLightGlow"
+			Width="524"
+			Height="538"
+			Margin="316,0,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Center">
+			<Ellipse.Fill>
+				<RadialGradientBrush>
+					<GradientStop Offset="0.4" Color="{Binding BackLights.OriginPointColor}" />
+					<GradientStop Offset="1" Color="{Binding BackLights.EndPointColor}" />
+				</RadialGradientBrush>
+			</Ellipse.Fill>
+		</Ellipse>
+		<Ellipse
+			x:Name="WallLight2"
+			Width="35"
+			Height="35"
+			Margin="331,405,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			d:IsLocked="True"
+			Fill="{Binding WallLight.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="WallLight1"
+			Width="35"
+			Height="35"
+			Margin="408,405,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			d:IsLocked="True"
+			Fill="{Binding WallLight.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="FrontLight5"
+			Width="50"
+			Height="50"
+			Margin="100,101,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Fill="{Binding FrontLights.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="FrontLight4"
+			Width="50"
+			Height="50"
+			Margin="261,101,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			d:IsLocked="True"
+			Fill="{Binding FrontLights.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="FrontLight3"
+			Width="50"
+			Height="50"
+			Margin="261,225,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			d:IsLocked="True"
+			Fill="{Binding FrontLights.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="FrontLight2"
+			Width="50"
+			Height="50"
+			Margin="100,225,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			d:IsLocked="True"
+			Fill="{Binding FrontLights.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="FrontLight1"
+			Width="50"
+			Height="50"
+			Margin="58,349,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			d:IsLocked="True"
+			Fill="{Binding FrontLights.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="BackLight4"
+			Width="50"
+			Height="50"
+			Margin="457,225,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Fill="{Binding BackLights.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="BackLight3"
+			Width="50"
+			Height="50"
+			Margin="616,225,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			d:IsLocked="True"
+			Fill="{Binding BackLights.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="BackLight2"
+			Width="50"
+			Height="50"
+			Margin="616,101,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			d:IsLocked="True"
+			Fill="{Binding BackLights.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+		<Ellipse
+			x:Name="BackLight1"
+			Width="50"
+			Height="50"
+			Margin="457,101,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			d:IsLocked="True"
+			Fill="{Binding BackLights.LightColor}"
+			Stroke="#7FFFFFFF"
+			StrokeThickness="5" />
+
+	</Grid>
+</UserControl>
